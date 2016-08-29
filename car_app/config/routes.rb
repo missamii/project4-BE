@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+
+  #API ROUTES
+
+  post "/cars" => "cars#trigger_cars_api"
 end
