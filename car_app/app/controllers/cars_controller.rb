@@ -7,7 +7,7 @@ class CarsController < ApplicationController
 
     cars_api_key = ENV["CAR_API_KEY"]
 
-    fullQuery = "http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&year=1995&api_key=#{marvel_public_api_key}"
+    fullQuery = "http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&year=1995&api_key=#{cars_api_key}"
 
     data = HTTParty.get(fullQuery)
     render json: data
