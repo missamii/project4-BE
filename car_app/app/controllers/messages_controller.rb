@@ -17,7 +17,7 @@ def create
 
   def update
     found_message = Message.where(name: params[:name])
-    updated = found_message.update(name: params[:name], email: params[:email])
+    updated = found_message.update(name: params[:name], email: params[:email], message: params[:message])
       if updated
     render json: updated
   else
