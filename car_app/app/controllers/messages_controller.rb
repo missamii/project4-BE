@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
 def index
-  message = Message.all
+  messages = Message.all
   render json: messages
 end
 
@@ -13,4 +13,22 @@ def create
       render json: {'error': new_message.errors}
     end
   end
+
+
+  def update
+    found_message = Message.where(name: params[:name])
+    updated = found_message.update(name: params[:name], email: params[:email])
+      if updated
+    render json: updated
+  else
+    render json: {'error': updated.errors}
+  end
+
+end
+
+def destroy
+  Message.delete_all(name: params[:name])
+  render json: {'Message controller': 'MESSAGES DESTROYED'}
+  end
+
 end
