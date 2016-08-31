@@ -27,7 +27,8 @@ def create
 end
 
 def destroy
-  Message.delete_all(name: params[:name])
+  puts "params", params
+  Message.delete_all(id: params[:id])
   render json: {'Message controller': 'MESSAGES DESTROYED'}
   end
 
