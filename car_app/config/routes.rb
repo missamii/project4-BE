@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   # message board
   get "/messages" => "messages#index"
+  get "/messages/:name" => "messages#show"
   post "/message/new" => "messages#create"
-  put "/message/:name" => "messages#update"
+  put "/messages/:name" => "messages#update"
   delete "/messages/:id" => "messages#destroy"
 end

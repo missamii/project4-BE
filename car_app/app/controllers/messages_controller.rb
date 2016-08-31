@@ -5,6 +5,11 @@ def index
   render json: messages
 end
 
+def show
+  messages = Message.where(name: params[:name])
+  render json: messages
+end
+
 def create
   new_message = Message.new(name: params[:name], email: params[:email], message: params[:message])
       if new_message.save
@@ -16,8 +21,9 @@ def create
 
 
   def update
+    puts params
     found_message = Message.where(name: params[:name])
-    updated = found_message.update(name: params[:name], email: params[:email], message: params[:message])
+    updated = found_message.update(name: params[:newName], email: params[:email], message: params[:message])
       if updated
     render json: updated
   else
