@@ -23,6 +23,7 @@ def create
   def update
     puts params
     found_message = Message.where(name: params[:name])
+
     updated = found_message.update(name: params[:newName], email: params[:email], message: params[:message])
       if updated
     render json: updated
@@ -33,6 +34,7 @@ def create
 end
 
 def destroy
+
   puts "params", params
   Message.delete_all(id: params[:id])
   render json: {'Message controller': 'MESSAGES DESTROYED'}

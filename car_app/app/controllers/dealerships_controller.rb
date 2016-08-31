@@ -1,8 +1,8 @@
 class DealershipsController < ApplicationController
       def trigger_dealership_api
-
     car_name = params[:make]
     zipcode = params[:zipcode]
+
 
     puts "CAR_API_KEY:", ENV["CAR_API_KEY"]
 
