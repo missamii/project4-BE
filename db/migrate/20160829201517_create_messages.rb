@@ -4,7 +4,6 @@ class CreateMessages < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.string :message
-      t.attachment :image
       t.timestamps
     end
   end
