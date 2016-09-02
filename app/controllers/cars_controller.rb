@@ -8,7 +8,7 @@ class CarsController < ApplicationController
     cars_api_key = ENV["CAR_API_KEY"]
 
     # fullQuery = "http://api.edmunds.com/api/vehicle/v2/#{car_name}/models?fmt=json&year=2016&api_key=#{cars_api_key}"
-    fullQuery = "http://api.edmunds.com/api/editorial/v2/#{car_name}?api_key=#{cars_api_key}&fmt=json"
+    fullQuery = "https://api.edmunds.com/api/editorial/v2/#{car_name}?api_key=#{cars_api_key}&fmt=json"
 
 
     puts "fullQuery:", [fullQuery]
